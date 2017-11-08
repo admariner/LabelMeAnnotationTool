@@ -427,7 +427,8 @@ function file_info() {
 		    var img1 = new Image()
 		    img1.src = path;
 		    img1.onload = function (){
-			console.log('preloaded');
+                /// update share url
+                $('#shareURL').attr('href', main_media.file_info.ShareURL());
 		    }
 		}
 		else {

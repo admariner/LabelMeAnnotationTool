@@ -62,6 +62,9 @@ function StartupLabelMe() {
 
       // Get the image:
       main_media.GetNewImage(main_media_onload_helper);
+	    
+      // set share link
+      $('#shareURL').attr('href', main_media.ShareURL());
     }
   }
   else {

@@ -27,6 +27,20 @@ function file_info() {
     // *******************************************
     // Public methods:
     // *******************************************
+	
+	
+    /** Get bookmark/share url **/
+    this.ShareURL = function() {
+    	params = document.location.search.slice(1).split('&').map(o=>o.split('=')).reduce((o,a)=>{o[a[0]]=a[1]; return o},{})
+	params['image']=this.GetImName()
+	params['collection']=this.GetCollection()
+	params['mode']=this.mode
+	params['folder']=this.GetDirName()
+	params['username']=getCookie("username")
+	params['folder']=this.GetDirName()
+	var url = document.location.href.split('?')[0]+'?'+Object.keys(params).map(k=>k+'='+params[k]).join('&')
+	return url
+    }
     
     /** Parses the URL and gets the collection, directory, and filename
      * information of the image to be annotated.  Returns true if the

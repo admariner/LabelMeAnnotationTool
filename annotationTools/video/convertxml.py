@@ -19,8 +19,7 @@ def serialize(elem):
 
 def formatcoords(arr):
 	arr2 = [", ".join(myList) for myList in arr]
-	arr3 = "; ".join(arr2)
-	return arr3
+	return "; ".join(arr2)
 
 def formatcoordsbounding(arr):
 	amax = map(max, arr)
